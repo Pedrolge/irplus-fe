@@ -3,10 +3,23 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {DashboardContextProvider} from "./context/DashboardContext";
+import { ReactKeycloakProvider } from '@react-keycloak/web';
+import keycloak from "./services/keycloak";
+
+
+const initOptions = {
+        onLoad: "login-required",
+        checkLoginIframe: false
+    }
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+      <ReactKeycloakProvider authClient={keycloak} initOptions={initOptions}>
+          <DashboardContextProvider>
+              <App/>
+          </DashboardContextProvider>
+      </ReactKeycloakProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

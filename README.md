@@ -1,6 +1,14 @@
-# Getting Started with Create React App
+# Getting Started 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Requirements
+
+The following versions of software were used in this project:
+
+Node: 14.17.1
+
+React: 17.0.0
 
 ## Available Scripts
 
